@@ -1,0 +1,123 @@
+body,html{ margin: 0px; padding: 0px;}
+.head{ background: #2f2c2c; height: 90px}
+
+
+/*通话浮动*/
+.s-tips{position:absolute; right: 345px; overflow: hidden; top: 15px; margin: 0px}
+.s-tips li{ float: left; width: 55px; height:60px; list-style: none; padding: 0px; font-size: 12px; padding:2px 0px;
+    color: #fff; text-align: center; cursor: pointer; margin: 0px 2px }
+.s-tips li:hover{ background: #276FDE;border-radius: 8px}
+.s-tips li.curr{ color: #FFE86C;background: #276FDE;border-radius: 8px}
+.s-tips li.gray{ color: #4f6273;cursor: default;}
+.s-tips li em{ width: 28px; margin: 0px auto; margin-top: 5px;
+     background: url("../images/allbgs.png");
+    display: block; height: 28px; margin-bottom: 5px; overflow: hidden}
+.s-tips li.hujiao em{ background-position: 0px 0px;}
+.s-tips li.hujiao.curr em,.s-tips li.hujiao.curr2 em{ background-position: -252px 0px;}
+.s-tips li.hujiao.gray em,.s-tips li.hujiao.gray2 em{ background-position: 0px 0px;}
+
+.s-tips li.zhuanjie em{ background-position:-28px 0px;}
+.s-tips li.zhuanjie.curr em,.s-tips li.zhuanjie.curr2 em{ background-position: -280px 0px;}
+.s-tips li.zhuanjie.gray em,.s-tips li.zhuanjie.gray2 em{ background-position: -28px 0px;}
+
+.s-tips li.zhijian em{ background-position:-56px 0px;}
+.s-tips li.zhijian.curr em,.s-tips li.zhijian.curr2 em{ background-position: -308px 0px;}
+.s-tips li.zhijian.gray em,.s-tips li.zhijian.gray2 em{ background-position: -56px 0px;}
+
+.s-tips li.shimang em{ background-position:-84px 0px;}
+.s-tips li.shimang.curr em,.s-tips li.shimang.curr2 em{ background-position: -336px 0px;}
+.s-tips li.shimang.gray em,.s-tips li.shimang.gray2 em{ background-position: -84px 0px;}
+
+.s-tips li.shixian em{ background-position:-112px 0px;}
+.s-tips li.shixian.curr em,.s-tips li.shixian.curr2 em{ background-position: -364px 0px;}
+.s-tips li.shixian.gray em,.s-tips li.shixian.gray2 em{ background-position: -112px 0px;}
+
+.s-tips li.sanfang em{ background-position:-140px 0px;}
+.s-tips li.sanfang.curr em,.s-tips li.sanfang.curr2 em{ background-position: -392px 0px;}
+.s-tips li.sanfang.gray em,.s-tips li.sanfang.gray2 em{ background-position: -140px 0px;}
+
+.s-tips li.guanduan em{ background-position:-168px 0px;}
+.s-tips li.guanduan.curr em,.s-tips li.guanduan.curr2 em{ background-position: -420px 0px;}
+.s-tips li.guanduan.gray em,.s-tips li.guanduan.gray2 em{ background-position: -168px 0px;}
+
+.s-tips li.baochi em{ background-position:-196px 0px;}
+.s-tips li.baochi.curr em,.s-tips li.baochi.curr2 em{ background-position: -448px 0px;}
+.s-tips li.baochi.gray em,.s-tips li.baochi.gray2 em{ background-position: -196px 0px;}
+
+.s-tips li.jietong em{ background-position:-224px 0px;}
+.s-tips li.jietong.curr em,.s-tips li.jietong.curr2 em{ background-position: -476px 0px;}
+.s-tips li.jietong.gray em,.s-tips li.jietong.gray2 em{ background-position: -224px 0px;}
+
+.s-tips li.zhuce em{ background-position:-504px 0px;}
+.s-tips li.zhuce.curr em,.s-tips li.zhuce.curr2 em{ background-position: -532px 0px;}
+.s-tips li.zhuce.gray em,.s-tips li.zhuce.gray2 em{ background-position: -504px 0px;}
+
+.s-tips li.banzhang em{ background-position:-560px 0px;}
+.s-tips li.banzhang.curr em,.s-tips li.banzhang.curr2 em{ background-position: -588px 0px;}
+.s-tips li.banzhang.gray em,.s-tips li.banzhang.gray2 em{ background-position: -560px 0px;}
+
+.s-tips li.logout em{ background-position:-616px 0px;}
+.s-tips li.logout.curr em,.s-tips li.logout.curr2 em{ background-position: -644px 0px;}
+.s-tips li.logout.gray em,.s-tips li.logout.gray2 em{ background-position: -616px 0px;}
+
+.s-tips li.gray em{ width: 28px; margin: 0px auto; margin-top: 5px;
+     background: url("../images/allbgs_gray.png");
+    display: block; height: 28px; margin-bottom: 5px; overflow: hidden}
+
+
+.s-dialog{ position: absolute; width: 240px; height: 85px; display: none;
+    background: #FFFFFF; border: 1px solid #276FDE; border-radius: 4px;color: #404040}
+.s-dialog input.btn{ width: 80px;}
+.s-text{ margin:0px; padding: 0px; margin-top: 10px;}
+.s-text li{ list-style: none; margin:0px; padding: 0px; width: 240px; height: 30px; margin-bottom:5px; font-size: 12px}
+.s-text li input{ float: left; border:1px solid #D5D5D5; height: 24px; width: 140px; padding-left: 5px; border-radius: 2px}
+.s-text li label{ width: 75px; display: block; float: left; height: 30px; line-height: 30px; text-align: center}
+.s-text li input.btn{ background: #3C80ED; color: #FFFFFF; text-align: center; height: 26px; line-height:26px;
+    border-radius: 2px; cursor: pointer; width: 72px; padding: 0px;
+border: 1px solid #3C80ED}
+.s-text li input.esc{width: 70px; margin-left: 5px;height: 26px; line-height: 26px; cursor: pointer;padding: 0px; }
+.s-text li input.btn:active{ background: #1F67D8}
+.s-dialog em{ position: absolute; width: 16px; height: 16px; background: url(../images/s-tips-right.png) no-repeat; right: -16px; top: 35px}
+.s-dialog em.left{ position: absolute; width: 16px; height: 16px; background: url(../images/s-tips-left.png) no-repeat; left: -7px; top: 35px}
+
+.statusIco{ margin: 10px; margin-left: 15px; position: relative;}
+#loginMsg{ margin: 10px; margin-top: 15px; margin-left: 15px; position: relative}
+#loginMsg a{ text-decoration: none; color: #3C80ED; }
+.rightTips em{ display: block; width: 14px; height: 14px;  border-radius: 7px; position:absolute; top: 0px; right: 0px}
+.rightTips em.red{ background: red}
+.rightTips em.green{ background: green}
+.rightTips{ height:70px; position: absolute; right: -130px; width: 130px; top: 10px;
+    border-radius: 4px 0px 0px 4px;
+    background: #FFFFFF; z-index: 99; font-size: 12px;color: #3C80ED;}
+.rightTipsICO{ background: url(../images/rightTipsICO.png) center left no-repeat; width:12px; height: 16px; top: 33px;
+    position: absolute; right: 0px; cursor: pointer}
+
+/*rightTipsStatus*/
+.rightTipsStatus{ float:right; width:207px; height:62px; background:url(../images/tbg.png) no-repeat; top:15px; position:absolute; right:0px}
+.rightTipsStatus .box{ margin-left:80px; font-size:12px; display:block}
+.rightTipsStatus .box h4{ font-weight:bold; color:#fff; margin:0px; padding:0px; padding-top:7px ;margin-top:12px}
+.rightTipsStatus .box h4.t2{margin-top:0px; padding:0px}
+.rightTipsStatus .box h4 a{font-weight: normal;color: #ffdd54;}
+.rightTipsStatus .box span{ color:#ffdd54}
+
+.zhuceInfo{margin:0px; padding-left:3px; margin-top: 5px;height:75px;overflow:auto;border: 1px solid #D5D5D5}
+.zhuceInfo li{list-style: none; margin:0px; padding: 0px; font-size: 12px}
+.btnZhuce{ background: #3C80ED; color: #FFFFFF; text-align: center; height: 26px; line-height:26px;
+    border-radius: 2px; cursor: pointer; width: 40px; padding: 0px;border: 1px solid #3C80ED}
+.escZhuce{width: 40px; height: 26px; line-height: 26px; cursor: pointer;padding: 0px; border:1px solid #D5D5D5;margin-top:5px;}
+.btnZhuce:active{ background: #1F67D8}
+
+select{
+  border:1px solid #c9c9c9;
+  background-color:#fff;
+  color:#666;
+  height:28px;
+  line-height:28px;
+  padding:4px 6px;
+  font-size:14px;
+  border-radius:4px;
+  cursor:pointer;
+  outline:none;
+}
+
+

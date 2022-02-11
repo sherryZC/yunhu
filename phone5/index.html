@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客服系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link class="css" rel="stylesheet" href="css/tips.css"/>
+</head>
+<body>
+<div class="head">
+	
+    <!--呼叫系统start-->
+    <div class="rightTipsStatus">
+    <div class="box">
+    <h4 >状态：<a id="callStatus">未连接</a></h4>
+    <h4 class="t2">排队：<a id="queueInfo">0人</a></h4>
+    </div>
+    </div>
+ 
+    <ul class="s-tips">
+		<li class="gray zhuce" id="zhuce">
+            <em></em>
+            <span>上班</span>
+        </li>
+		<li class="logout" id="logout">
+            <em></em>
+            <span>下班</span>
+        </li>
+		<!-- <li class="gray banzhang" id="banzhang">
+            <em></em>
+            <span>班长</span>
+        </li> -->
+        <li class="gray hujiao" id="hujiao">
+            <em></em>
+            <span>外拨</span>
+        </li>
+        <li class="gray zhuanjie" id="zhuanjie">
+            <em></em>
+            <span>转接</span>
+        </li>
+        <li class="gray shimang" id="shimang">
+            <em></em>
+            <span>小休</span>
+        </li>
+        <li class="shixian" id="shixian">
+            <em></em>
+            <span>工作</span>
+        </li>
+        <!-- <li class="gray sanfang" id="sanfang">
+            <em></em>
+            <span>三方通话</span>
+        </li> -->
+        <li class="gray guanduan" id="guanduan">
+            <em></em>
+            <span>挂断</span>
+        </li>
+        <li class="gray baochi" id="baochi">
+            <em></em>
+            <span>静音</span>
+        </li>
+        <li class="jietong" id="jietong">
+            <em></em>
+            <span>取消静音</span>
+        </li>
+		<!-- <li class="gray zhijian" id="zhijian">
+            <em></em>
+            <span>互联互通</span>
+        </li> -->
+        <li class="gray afterWorkOver" id="afterWorkOver">
+            <em></em>
+            <span>结束处理</span>
+        </li>
+        
+        <li class="gray zhaiji" id="zhaiji">
+            <em></em>
+            <span>摘机</span>
+        </li>
+    </ul>
+    <div style="position: absolute;right: 225px;top: 23px;">
+    	<div><select id="onHookMode" disabled="disabled">
+			<option value="sip" >SIP电话</option>
+			<option value="pstn" selected = "selected" >PSTN电话</option>
+			<option value="webcall"  >WebCall</option>
+		</select></div>
+		<div><span style="color: white;font-size: 12px;margin-left: 22%;">接听方式</span></div>
+	</div>
+	<div class="s-dialog sanfangTips">
+		<em></em>
+		 <ul class="s-text">
+			 <li>
+				 <label>三方电话:</label>
+				 <input type="text" placeholder="请输入电话号码" id="sanfang_dial" value="" />
+			 </li>
+			 <li id="sanfang_tools1">
+				 <label></label>
+				 <input class="btn" type="button" id="sanfang_submit" value="确认" />
+				 <input class="esc" type="button" value="关闭"/>
+			 </li>
+			<li id="sanfang_tools2">
+				<div>
+					<input class="esc" type="button" value="关闭"  />
+					<input class="btn" type="button"  value="挂断" id="sanfang_onhook" />
+					<input class="btn" type="button"  value="三方" id="sanfang_join" />
+				</div>
+			</li>
+		 </ul>
+	</div>
+    <div class="s-dialog zhuanjieTips">
+        <em></em>
+        <ul class="s-text">
+            <li>
+                <label>转接电话:</label>
+                <input type="text" placeholder="请输入电话号码" id="zhuanjie_dial" value="" />
+            </li>
+            <li id="trans_tools1">
+            	<label></label>
+                <input class="btn" type="button" id="zhuanjie_submit" value="确认"/>
+                <input class="esc" type="button" value="关闭"  />
+            </li>
+            <li id="trans_tools2">
+            	<div>
+	            	<input class="esc" type="button" value="关闭"  />
+	            	<input class="btn" type="button"  value="拉回"  id="zhuajie_back"/>
+	            	<input class="btn" type="button"  value="转接"  id="zhuanjie_confirm"/>
+            	</div>
+            </li>
+        </ul>
+    </div>
+    <div class="s-dialog hujiaoTips">
+        <em></em>
+        <ul class="s-text">
+            <li>
+                <label>被叫电话:</label>
+                <input type="text" placeholder="请输入电话号码" id="speed_dial" value="" />
+            </li>
+            <li>
+                <label></label>
+                <input class="btn" type="button" id="hujiao_submit" value="确认" />
+                <input class="esc" type="button" value="关闭" />
+            </li>
+        </ul>
+    </div>
+	
+	<div class="s-dialog logonTips">
+		<em></em>
+		<div>
+			<div style="width:177px;float:left;padding-left:3px;">
+				<ul class="zhuceInfo" id="grpList">
+					<!--
+					<li><input type="checkbox" name="checkbox"/><span>A001</span></li>
+					<li><input type="checkbox" name="checkbox"/><span>A002</span></li>
+					<li><input type="checkbox" name="checkbox"/><span>A003</span></li>
+					-->
+				<ul>
+			</div>
+			<div style="width:55px;float:left;padding:15px 0 0 5px;overflow:hidden;">
+				<input class="btnZhuce" type="button" value="确认" />
+                <input class="escZhuce" type="button" value="关闭" />
+			</div>
+		</div>
+	</div>
+	
+    <iframe id="frameB" style="display:none;"></iframe>
+    <script src="js/jquery-1.7.2.min.js?v=1.0.0" type="text/javascript"></script>
+    <script type="text/javascript" src="js/socket.io.js"></script>
+	<!-- <script src="js/jquery.stream-1.2.js?v=1.0.2" type="text/javascript"></script> -->
+	<script src="js/SdAgent.js?v=1.0.2" type="text/javascript"></script>
+	<!-- <script src="js/SdAgent-min.js?v=1.0.6" type="text/javascript"></script> -->
+	<script src="js/jquery.sdcommon.js?v=1.0.0" type="text/javascript"></script>
+    <script src="js/phone.js?v=1.0.18" type="text/javascript"></script>
+    <script src="SIPml-api.js?svn=252" type="text/javascript"> </script>
+ 	<script src="webrtc.js?svn=260" type="text/javascript"> </script>
+ 	<audio id="audio_remote" autoplay="autoplay"> </audio>
+    <audio id="ringtone" loop src="sounds/ringtone.wav"> </audio>
+    <audio id="ringbacktone" loop src="sounds/ringbacktone.wav"> </audio>
+    <audio id="dtmfTone" src="sounds/dtmf.wav"> </audio>
+    
+    <script type="text/javascript" >
+	    try {
+	        var pageTracker = _gat._getTracker("UA-6868621-19");
+	        pageTracker._trackPageview();
+	    } catch (err) { }
+    
+        jQuery.fn.outerHTML = function (s) {
+            return (s) ? this.before(s).remove() : jQuery("<p>").append(this.eq(0).clone()).html();
+        }
+        $(".s-tips li").mouseenter(function () {
+			if($(this).hasClass("gray")==false){
+				$(this).addClass("curr2");
+			}
+        }).mouseleave(function () {
+			$(".s-tips li").removeClass("curr2");
+		});
+        $(".s-tips li").click(function () {
+			if($(this).hasClass("gray")) return;
+            $(".s-dialog").hide();
+            var top = $(this).offset().top;
+            var left = $(this).offset().left;
+            $(".headTips").stop(false, true);
+            if ($.browser.version == "7.0" || $.browser.version == "6.0") {
+                top = top +18;
+            }
+            if($.browser.msie) {
+                $(".s-dialog input").css("line-height","26px");
+            }
+            if($(this).hasClass("sanfang")){
+                $(".sanfangTips").css({ "top": 1 + "px", "left": left - 250, "display": "block" }).animate({ opacity: 1 },1000);
+            } else if($(this).hasClass("zhuanjie")){
+                //$(".zhuanjieTips").css({ "top": 1 + "px", "left": left +80, "display": "block" }).animate({ opacity: 1 },1000);
+                //$(".zhuanjieTips em").addClass("left");
+            }else if($(this).hasClass("hujiao")){
+                $(".hujiaoTips").css({ "top": 1 + "px", "left": left + 60, "display": "block" }).animate({ opacity: 1 },1000);
+                $(".hujiaoTips em").addClass("left");
+			}else if($(this).hasClass("zhuce")){
+				$(".logonTips").css({ "top": 1 + "px", "left": left + 60, "display": "block" }).animate({ opacity: 1 },1000);
+				$(".logonTips em").addClass("left");
+				setLogonGrps();
+            }else{
+                $(".s-dialog").hide();
+            }
+            if($(this).hasClass("baochi")){
+                SdAgent.agtHold();
+                $("#guanduan,#zhuanjie").addClass("gray");
+                $(".s-tips li").removeClass("curr");
+                $(".baochi").addClass("curr");
+            }
+           else if($(this).hasClass("jietong")){
+                SdAgent.agtRetrieve();
+                $("#guanduan,#zhuanjie").removeClass("gray");
+                $(".s-tips li").removeClass("curr");
+                $(".jietong").addClass("curr");
+            }else if($(this).hasClass("afterWorkOver")){
+            	SdAgent.agtWorkAfterCallOver()
+                $(".s-tips li").removeClass("curr");
+                $(".afterWorkOver").addClass("gray");
+            }else{
+                $(".s-tips li").removeClass("curr");
+                $(this).addClass("curr");
+            }
+        });
+        $(".esc,.escZhuce").click(function(){
+            $(this).parents(".s-dialog").hide();
+        });
+		
+		//注册
+		$(".btnZhuce").click(function(){
+			if($(this).hasClass("gray")) return;
+			var grps = "",grpsSplit="";
+			$("#grpList li input").each(function(i){
+				if($(this).attr("checked")=="checked") {
+					grps=grps+$(this).attr("groupid");
+					if(grpsSplit!="") grpsSplit=grpsSplit+"|";
+					grpsSplit=grpsSplit+$(this).attr("groupid");
+				}
+			});
+			if(grps==""){
+				ztoDialog("message","请选择一个座席组");
+				return;
+			}
+			var model = $("#onHookMode").find("option:selected").text(); 
+			var modelVal = $("#onHookMode").val();
+			var isDaLogin = "N";
+			if(confirm("确定注册"+grps+"组并以"+model+"方式接听？")){
+				if(modelVal=="pstn"){
+					phone.station = phone.agtId;
+					isDaLogin = "Y";
+					$("#zhaiji").hide();
+				}else if(modelVal=="sip"){
+					phone.station = phone.agtId + "_IP";
+					isDaLogin = "N";
+					$("#zhaiji").hide();
+				}else{
+					phone.station = phone.agtId + "_WR";
+					isDaLogin = "N";
+					$("#zhaiji").show();
+				}
+				phone.groupId=grps;
+				$.cookies.set("SDLogonGroups", grpsSplit,{expires: 7});
+				$.cookies.set("SDLogonStation", phone.station,{expires: 7});
+				phone.onDisConnectTag=1;
+				SdAgent.logon(phone.groupId,phone.station);
+				phone.loginCmd = 1;
+				//phone.updateDaLogin(isDaLogin);
+				$(this).parents(".s-dialog").hide();
+			}
+			
+		});
+		
+		//注销
+		$("#logout").click(function(){
+			if($(this).hasClass("gray")) return;
+			$("#onHookMode").removeAttr("disabled");
+			phone.onDisConnectTag=0;
+			SdAgent.logout();
+		});
+
+		$("#zhaiji").click(function(){
+			sipCall("call-audio");
+		});
+	
+		//快速呼叫
+        $("#hujiao_submit").click(function(){
+            var dialNo = $.trim($("#speed_dial").val());
+            if(dialNo=="") return;
+            if(phone.agtStatus==3){
+				ztoDialog("message","请先注册座席");
+                return;
+			}
+			if(phone.callStatus!=0 || phone.occupy!=0){
+				ztoDialog("message","非空闲状态，无法呼叫");
+				return;
+			}
+			phone.lastCall.ani = dialNo;
+			var modelVal = $("#onHookMode").val();
+			if(modelVal=="webcall") phone.callOutWR = 1;
+            SdAgent.dialout(dialNo,"X",0);
+       	});
+
+        $("#speed_dial").keyup(function(event){
+        	var dialNo = $.trim($(this).val());
+    		if(phone.isValidateDNIS(dialNo)==true){
+    			$("#speed_dial").val(dialNo.replace(/[^\u0000-\u00FF]/ig,""));
+    		}
+    		if(event.keyCode==13){
+    			$("#hujiao_submit").click();
+    		}
+    	});
+
+        //转接
+		$("#zhuanjie").click(function(){
+			if($(this).hasClass("gray")) return;
+			phone.openMonitor("zhuanjie");
+		});
+		
+        $("#zhuanjie_submit").click(function(){
+        	 var dialNo = $("#zhuanjie_dial").val();
+        	 if(dialNo=="") return;
+             if(phone.agtStatus==3){
+				ztoDialog("message","请先注册座席");
+                 return;
+ 			}
+ 			if(phone.callStatus!=2){
+				ztoDialog("message","非通话状态，无法转接");
+ 				return;
+ 			}
+ 			SdAgent.dialout(dialNo,"X",0);
+       	});
+
+        $("#zhuanjie_dial").keyup(function(event){
+        	var dialNo = $.trim($(this).val());
+    		if(phone.isValidateDNIS(dialNo)==true){
+    			$("#zhuanjie_dial").val(dialNo.replace(/[^\u0000-\u00FF]/ig,""));
+    		}
+    		if(event.keyCode==13){
+    			$("#zhuanjie_submit").click();
+    		}
+    	});
+
+       	//三方
+       	$("#sanfang_submit").click(function(){
+       		var dialNo = $.trim($("#sanfang_dial").val());
+       		if(dialNo=="") return;
+            if(phone.agtStatus==3){
+				ztoDialog("message","请先注册座席");
+                return;
+			}
+			if(phone.callStatus!=2){
+				ztoDialog("message","非通话状态，无法转接");
+				return;
+			}
+			SdAgent.dialout(dialNo,"X",0);
+		});
+
+       	$("#sanfang_dial").keyup(function(event){
+        	var dialNo = $.trim($(this).val());
+    		if(phone.isValidateDNIS(dialNo)==true){
+    			$("#sanfang_dial").val(dialNo.replace(/[^\u0000-\u00FF]/ig,""));
+    		}
+    		if(event.keyCode==13){
+    			$("#sanfang_submit").click();
+    		}
+    	});
+
+		//默认注销按钮隐藏
+		$(".logout").hide();
+		
+        //当前状态，默认示忙
+        $('#shixian').hide();
+
+        //接通  保持的状态   默认保持
+        $('.jietong').hide();
+		
+		//示忙（暂停）
+        $('#shimang').click(function(){
+			if($(this).hasClass("gray")) return;
+			phone.isMSClick=true;
+			SdAgent.pause();
+        });
+        //示闲（恢复）
+        $('#shixian').click(function(){
+			if($(this).hasClass("gray")) return;
+			phone.isMSClick=true;
+        	SdAgent.restore();
+        });
+		
+		$(".guanduan,#zhuajie_back,#sanfang_onhook").click(function(){
+			SdAgent.onHook();
+		});
+
+        //转接
+		$("#zhuanjie_confirm").click(function(){
+			SdAgent.dialTrans();
+		});
+
+		//三方通话
+		$("#sanfang_join").click(function(){
+			SdAgent.talkingDialJoin();
+		});
+		
+		//班长
+		$("#banzhang").click(function(){
+			if($(this).hasClass("gray")) return;
+			phone.openMonitor("banzhang");
+		});
+		
+		//互联互通
+		$("#zhijian").click(function(){
+			if($(this).hasClass("gray")) return;
+			//SdAgent.agtWorkAfterCallOver();
+			//parent.phone.closeAgtMonitor();
+			//parent.showRemoteCtiDlg("RemoteCTI.html?tenantsId=010100899F9BD54BB525C8&myId=010400587ACB6A42332103");
+			parent.showRemoteCtiDlg("./RemoteCTI.html?tenantsId="+phone.tenantsId+"&myId="+phone.myId);
+		});
+		
+        function ztoDialog(type,data){
+            try{
+				alert(type+":"+data);
+				//parent.Dialog(type,data);
+            }catch(e){}
+        }
+		
+		//从cookies中读取保存的座席组值
+		function setLogonGrps(){
+			var grpsSplit = $.cookies.get("SDLogonGroups");
+			if(grpsSplit!=null && grpsSplit!=""){
+				var arrGrps = grpsSplit.split("|");
+				for(var i=0;i<arrGrps.length;i++){
+					$("#grpList li input[groupid='"+arrGrps[i]+"']").attr("checked","checked");
+				}
+			}
+			
+		}
+    </script>
+    <!--呼叫系统end-->
+</div>
+</body>
+</html>

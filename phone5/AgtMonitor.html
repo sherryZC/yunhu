@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link class="css" rel="stylesheet" href="css/agtmonitor.css?v=1.0.0"/>
+</head>
+<body>
+	<div style="overflow:hidden;height:41px;">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bold headtable table">
+			<tr>
+				<td width="30"><div>&nbsp;</div></td>
+				<td width="60"><div>坐席工号</div></td>
+				<td width="60"><div>座席姓名</div></td>
+				<td width="60"><div>注册状态</div></td>
+				<td width="60"><div>暂停状态</div></td>
+				<td width="60"><div>通话状态</div></td>
+				<td width="60"><div>话机状态</div></td>
+				<td width="60"><div>占用状态</div></td>
+				<td width="60"><div>登录组</div></td>
+				<td width="60"><div>所属组</div></td>
+			</tr>
+		</table>
+	</div>
+    <div style="overflow-y: auto; height: 420px; ">
+        <table id="tbMonitor" width="100%" border="0" cellpadding="0" cellspacing="0" class="table detail">
+        </table>
+    </div>
+    <div class="c15"></div>
+    <div class="footer" id="zhuanjieTools">
+		<!--<span>转接组</span>
+		<select id="cbTransAgtGrp">
+			
+			<option value="A013">A013(测试组)</option>
+			<option value="A014">A014(A014)</option>
+			<option value="A014">A015(A015)</option>
+			
+		</select>
+		<span>转接号码</span>-->
+		<input type="hidden" id="txtTransAgtId" style="width:80px"></input>
+        <!--<a id="btnTransAgt">呼叫坐席</a>
+        <a id="btnTransGrp">转座席组</a>-->
+        <a id="btnTrans">转接</a>
+        <!-- <a id="btnRetrieve" class="btn-disabled">拉回</a> -->
+    </div>
+	<div class="footer" id="banzhangTools" style="display:none;">
+		<a id="btnLogoutAgt">注销座席</a>
+        <a id="btnDialAgt">呼叫坐席</a>
+		<a id="btnReqAgt">请求</a>
+        <a id="btnListen">监听</a>
+        <a id="btnJointalk" class="btn-disabled">加入通话</a>
+		<a id="btnIntercept" class="btn-disabled">拦截</a>
+		<a id="btnDisconCall" class="btn-disabled">强拆</a>
+	</div>
+	
+	<div class="s-dialog reqAgt">
+        <ul class="s-text">
+			<li>
+                <span id="lblReqAgtInfo">向1001发送请求，请求中</span>
+            </li>
+            <li>
+                <label>请求类型:</label>
+                <select id="cbReqAgtType">
+					<option value="0">监听</option>
+					<option value="1">拦截</option>
+					<option value="2">加入通话</option>
+				</select>
+            </li>
+			<li>
+                <label>请求备注:</label>
+                <input type="text" id="txtReqAgtInfo" value="" maxlength=50 />
+            </li>
+            <li>
+                <label></label>
+                <input class="btn" type="button" id="btnSendReq" value="发送" />
+                <input class="esc" type="button" id="btnCloseReq" value="关闭" />
+            </li>
+        </ul>
+    </div>
+	
+	<div class="s-dialog recvAgtReq">
+        <ul class="s-text">
+			<li style="height:90px;">
+                <span id="lblRecvReqAgtInfo" style="height: 24px; line-height: 24px;">接收到81010的[监听]请求！</span>
+				<span id="lblRecvReqAgtMemo" style="height: 22px; line-height: 22px;color:#000;float:left;padding:0px 4px;text-align:left;"></span>
+            </li>
+            <li>
+                <label></label>
+                <input class="btn" type="button" id="btnAcceptReq" value="接收" />
+                <input class="esc" type="button" id="btnCloseRecvReq" value="关闭" />
+            </li>
+        </ul>
+    </div>
+	
+	<!--加一个半透明层--> 
+    <div id="doing" style="display:none;filter:alpha(opacity=10);-moz-opacity:0.3;opacity:0.3;background-color:#000;width:100%;height:420px;z-index:1000;position: absolute;left:0;top:41px;overflow: hidden;"></div>
+	
+	<script src="js/jquery-1.7.2.min.js?v=1.0.0" type="text/javascript"></script>
+	<script src="js/AgtMonitor.js?v=1.0.0" type="text/javascript"></script>
+</body>
+</html>

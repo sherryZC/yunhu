@@ -1,0 +1,102 @@
+body, html{
+	padding: 0px;
+	margin: 0px;
+	font-size: 14px;
+	color: #666666;
+}
+
+::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #dfecff; 
+}
+
+::-webkit-scrollbar-thumb:vertical{
+	height: 5px;
+	background-color: #75a1f2;
+	-webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+	width: 5px;
+	background-color: #75a1f2;
+	-webkit-border-radius: 4px;
+}
+
+.bold{
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+}
+
+.headtable{
+	border-bottom: 1px solid #dee3eb;
+	color: #7489AB;
+	background: #f9fbff;
+}
+		
+.table td div{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/*background: #f9fbff;*/
+	text-align: left;
+	overflow:hidden;
+	white-space: nowrap; 
+    word-break : keep-all;
+}
+		
+.detail tr{
+	background: #f9fbff;
+}
+
+.detail tr:hover{
+	background: #e2e2e2;
+	cursor:pointer;
+}
+		
+.detail tr.tr-selected{
+	background: #0092DC;
+	color: #fff;
+}
+		
+.detail td{
+	border-bottom: 1px dashed #dee3eb;
+	text-align: left
+}
+.c15{height: 15px}
+.footer{ margin-top: 0px;width: 100%; float: right; text-align:right;padding-right:5px;}
+.footer a {padding: 5px 12px;background: #dfecff;border-radius: 4px;cursor: pointer;font-size: 12px;}
+.footer a:hover {background: #75A1F2;color: #fff;}
+.footer a.btn-disabled, .footer a.btn-disabled:hover {cursor: default;color:#B0B0B0;background: #dfecff;}
+.footer select{ border:1px solid #D5D5D5; height: 21px; width: 147px; padding-left: 5px; border-radius: 2px}
+.footer span{ height: 21px; line-height: 21px;font-size: 12px;}
+		 
+.ico{ background:url(../images/allStatus.png) no-repeat; width:17px; height:18px; display:block; float:left; margin-right:5px;}
+.status-offline{ background-position: 0px 0px;}
+.status-pause{ background-position: -17px 0px;}
+.status-onhook{ background-position: -34px 0px;}
+.status-talk{ background-position: -51px 0px;}
+.status-dialout{ background-position: -68px 0px;}
+.status-hold{ background-position: -85px 0px;}
+.status-ring{ background-position: -102px 0px;}
+.status-work{ background-position: -119px 0px;}
+.status-sanfang{ background-position: -136px 0px;}
+.status-listen{ background-position: -153px 0px;}
+		 
+.s-dialog{ position: absolute; display: none;background: #FFFFFF; border: 1px solid #276FDE; border-radius: 4px;color: #404040;z-index:1001}
+.s-dialog input.btn{ width: 80px;}
+.s-text{ margin:0px; padding: 0px; margin-top: 10px;}
+.s-text li{ list-style: none; margin:0px; padding: 0px; width: 240px; height: 30px; margin-bottom:5px; font-size: 12px;}
+.s-text li input{ float: left; border:1px solid #D5D5D5; height: 24px; width: 140px; padding-left: 5px; border-radius: 2px}
+.s-text li label{ width: 75px; display: block; float: left; height: 30px; line-height: 30px; text-align: center}
+.s-text li input.btn{ background: #3C80ED; color: #FFFFFF; text-align: center; height: 26px; line-height:26px;
+    border-radius: 2px; cursor: pointer; width: 72px; padding: 0px;border: 1px solid #3C80ED}
+.s-text li input.esc{width: 70px; margin-left: 5px;height: 26px; line-height: 26px; cursor: pointer;padding: 0px; }
+.s-text li input.btn:active{ background: #1F67D8}
+.s-text li input.btn:disabled{ background: #dfecff;cursor: default;color:#B0B0B0;border:0px;}
+
+.s-text li select{ float: left; border:1px solid #D5D5D5; height: 28px; width: 147px; padding-left: 5px; border-radius: 2px}
+.s-text li span{ display: block; float: center; height: 30px; line-height: 30px; text-align: center; color:blue}
